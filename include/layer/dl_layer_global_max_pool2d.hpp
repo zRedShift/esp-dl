@@ -104,7 +104,7 @@ namespace dl
                 this->output->set_exponent(input.exponent);
                 DL_LOG_LAYER_LATENCY_END(this->name, "apply");
 
-                if (autoload_enable)
+                if constexpr (false)
                 {
                     dl::tool::cache::autoload_func((uint32_t)(this->output->element), this->output->get_size() * sizeof(feature_t),
                                                    (uint32_t)(input.element), input.get_size() * sizeof(feature_t));
